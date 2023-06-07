@@ -112,7 +112,6 @@ input[type="search"] {
 }
 
 .card {
-    max-width: 300px;
     border-left: 10px solid orange;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -134,4 +133,10 @@ input[type="search"] {
 
 .content-wrapper > h3{
     margin: var(--med-margin);
+}
+
+.icon-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
 }
