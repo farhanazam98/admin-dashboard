@@ -1,6 +1,7 @@
 
 :root{
     --med-margin: 10px;
+    --large-margin: 20px;
     --border: 1px solid black;
 }
 
@@ -13,7 +14,7 @@ body{
 .container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
 }
 
 .sidebar{
@@ -112,28 +113,29 @@ input[type="search"] {
 
 .projects{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
 }
 
-.card {
-    border-left: 10px solid orange;
+.card-variant-1 {
     border-radius: 10px;
+    border-left: 10px solid orange;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: var(--med-margin);
     display: flex;
     flex-direction: column;
 }
 
-.card > h3{
+.card-variant-1 > h3, .card-variant-2 > h3 {
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-.card > p{
+.card-variant-1 > p, .card-variant-2 > p {
     margin-top: 0;
     padding-top: 0;
+    margin-bottom: 0;
 }
 
 
@@ -141,8 +143,63 @@ input[type="search"] {
     margin: var(--med-margin);
 }
 
+.space{
+    flex-grow: 1;
+}
+
 .icon-container{
     display: flex;
     flex-direction: row;
     justify-content: end;
 }
+
+.announcements{
+    margin: var(--med-margin);
+}
+
+.card-variant-2{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+.profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.identifiers > p {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+p.role {
+    color: gray;
+}
+
+.card-variant-3{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--large-margin);
+}
+
+.card-variant-2, .card-variant-3{
+    width: 300px;
+}
+
